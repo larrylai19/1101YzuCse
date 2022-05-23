@@ -13,7 +13,7 @@ def upload():
     imgStr = request.form['img']
     img = base64.b64decode(imgStr)
     fileName = request.form['fileName']
-    filePath = os.path.join('imgs', 'fileName')
+    filePath = os.path.join('imgs', fileName)
     with open(filePath, 'wb') as f:
         f.write(img)
     return "Success"
